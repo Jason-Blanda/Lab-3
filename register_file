@@ -1,0 +1,50 @@
+module register_file(s, s2, en, R, clk, D, A, B);
+
+	input [4:0] s;
+	input [4:0] s2;
+	input en;
+	input R;
+	input clk;
+	input [31:0] D;
+	wire [31:0] m;
+	wire [31:0] Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q16, Q17, Q18, Q19, Q20, Q21, Q22, Q23, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31;
+	output wire [31:0] A;
+	output wire [31:0] B;
+
+	Decoder5to32 instX(m[31:0], s[4:0], en);
+	register_32bit inst0(Q0, D, m[0], R, clk);
+	register_32bit inst1(Q1, D, m[1], R, clk);
+	register_32bit inst2(Q2, D, m[2], R, clk);
+	register_32bit inst3(Q3, D, m[3], R, clk);
+	register_32bit inst4(Q4, D, m[4], R, clk);
+	register_32bit inst5(Q5, D, m[5], R, clk);
+	register_32bit inst6(Q6, D, m[6], R, clk);
+	register_32bit inst7(Q7, D, m[7], R, clk);
+	register_32bit inst8(Q8, D, m[8], R, clk);
+	register_32bit inst9(Q9, D, m[9], R, clk);
+	register_32bit inst10(Q10, D, m[10], R, clk);
+	register_32bit inst11(Q11, D, m[11], R, clk);
+	register_32bit inst12(Q12, D, m[12], R, clk);
+	register_32bit inst13(Q13, D, m[13], R, clk);
+	register_32bit inst14(Q14, D, m[14], R, clk);
+	register_32bit inst15(Q15, D, m[15], R, clk);
+	register_32bit inst16(Q16, D, m[16], R, clk);
+	register_32bit inst17(Q17, D, m[17], R, clk);
+	register_32bit inst18(Q18, D, m[18], R, clk);
+	register_32bit inst19(Q19, D, m[19], R, clk);
+	register_32bit inst20(Q20, D, m[20], R, clk);
+	register_32bit inst21(Q21, D, m[21], R, clk);
+	register_32bit inst22(Q22, D, m[22], R, clk);
+	register_32bit inst23(Q23, D, m[23], R, clk);
+	register_32bit inst24(Q24, D, m[24], R, clk);
+	register_32bit inst25(Q25, D, m[25], R, clk);
+	register_32bit inst26(Q26, D, m[26], R, clk);
+	register_32bit inst27(Q27, D, m[27], R, clk);
+	register_32bit inst28(Q28, D, m[28], R, clk);
+	register_32bit inst29(Q29, D, m[29], R, clk);
+	register_32bit inst30(Q30, D, m[30], R, clk);
+	register_32bit inst31(Q31, D, m[31], R, clk);
+	mux_32to1 instA(Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q16, Q17, Q18, Q19, Q20, Q21, Q22, Q23, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, s2[4:0], en, A[31:0]);
+	mux_32to1 instB(Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q16, Q17, Q18, Q19, Q20, Q21, Q22, Q23, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, s2[4:0], en, B[31:0]);
+
+endmodule

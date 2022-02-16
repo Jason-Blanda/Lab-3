@@ -1,0 +1,53 @@
+module Decoder5to32(z, s, en);
+    input [4:0]s;
+    input en;
+    output [31:0]z;
+    
+    assign z[0] = ~s[4] & ~s[3] & ~s[2] & ~s[1] & ~s[0] & en;
+    assign z[1] = ~s[4] & ~s[3] & ~s[2] & ~s[1] &  s[0] & en;
+    
+    assign z[2] = ~s[4] & ~s[3] & ~s[2] &  s[1] & ~s[0] & en;
+    assign z[3] = ~s[4] & ~s[3] & ~s[2] &  s[1] &  s[0] & en;
+    
+    assign z[4] = ~s[4] & ~s[3] &  s[2] & ~s[1] & ~s[0] & en;
+    assign z[5] = ~s[4] & ~s[3] &  s[2] & ~s[1] &  s[0] & en;
+    
+    assign z[6] = ~s[4] & ~s[3] &  s[2] &  s[1] & ~s[0] & en;
+    assign z[7] = ~s[4] & ~s[3] &  s[2] &  s[1] &  s[0] & en;
+    
+    assign z[8] = ~s[4] &  s[3] & ~s[2] & ~s[1] & ~s[0] & en;
+    assign z[9] = ~s[4] &  s[3] & ~s[2] & ~s[1] &  s[0] & en;
+    
+    assign z[10] = ~s[4] &  s[3] & ~s[2] &  s[1] & ~s[0] & en;
+    assign z[11] = ~s[4] &  s[3] & ~s[2] &  s[1] &  s[0] & en;
+    
+    assign z[12] = ~s[4] &  s[3] &  s[2] & ~s[1] & ~s[0] & en;
+    assign z[13] = ~s[4] &  s[3] &  s[2] & ~s[1] &  s[0] & en;
+    
+    assign z[14] = ~s[4] &  s[3] &  s[2] &  s[1] & ~s[0] & en;
+    assign z[15] = ~s[4] &  s[3] &  s[2] &  s[1] &  s[0] & en;     
+    
+    assign z[16] =  s[4] & ~s[3] & ~s[2] & ~s[1] & ~s[0] & en;
+    assign z[17] =  s[4] & ~s[3] & ~s[2] & ~s[1] &  s[0] & en;
+    
+    assign z[18] =  s[4] & ~s[3] & ~s[2] &  s[1] & ~s[0] & en;
+    assign z[19] =  s[4] & ~s[3] & ~s[2] &  s[1] &  s[0] & en;
+    
+    assign z[20] =  s[4] & ~s[3] &  s[2] & ~s[1] & ~s[0] & en;
+    assign z[21] =  s[4] & ~s[3] &  s[2] & ~s[1] &  s[0] & en;
+    
+    assign z[22] =  s[4] & ~s[3] &  s[2] &  s[1] & ~s[0] & en;
+    assign z[23] =  s[4] & ~s[3] &  s[2] &  s[1] &  s[0] & en;
+    
+    assign z[24] =  s[4] &  s[3] & ~s[2] & ~s[1] & ~s[0] & en;
+    assign z[25] =  s[4] &  s[3] & ~s[2] & ~s[1] &  s[0] & en;
+    
+    assign z[26] =  s[4] &  s[3] & ~s[2] &  s[1] & ~s[0] & en;
+    assign z[27] =  s[4] &  s[3] & ~s[2] &  s[1] &  s[0] & en;
+    
+    assign z[28] =  s[4] &  s[3] &  s[2] & ~s[1] & ~s[0] & en;
+    assign z[29] =  s[4] &  s[3] &  s[2] & ~s[1] &  s[0] & en;
+    
+    assign z[30] =  s[4] &  s[3] &  s[2] &  s[1] & ~s[0] & en;
+    assign z[31] =  s[4] &  s[3] &  s[2] &  s[1] &  s[0] & en;     
+endmodule
